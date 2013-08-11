@@ -4,7 +4,7 @@
 echo
 echo "Trying to load wx (should fail)..."
 cd /tmp
-python -c "import wx" || echo "FAIL"
+python -c "import wx" && echo "PASS" || echo "FAIL"
 echo "Done."
 echo
 sleep 3
@@ -28,6 +28,6 @@ python setup.py install
 echo
 echo "Trying to load wx again (should pass)..."
 cd /tmp
-python -c "import wx" && echo "PASS"
+python -c "import wx" && echo "PASS" || echo "FAIL"
 echo "Done."
 echo
